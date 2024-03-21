@@ -6,13 +6,13 @@ WORKDIR /usr/src/app
 
 # アプリケーションの依存関係をインストールするために、
 # package.jsonとpackage-lock.json（あれば）をコピー
-COPY package*.json ./
+COPY ../package*.json ./
 
 # 依存関係をインストール
 RUN npm install
 
 # アプリケーションのソースコードをコピー
-COPY . .
+COPY ../ .
 
 # アプリケーションがリッスンするポートをDockerに伝える
 # Next.jsのデフォルトポートは3000
