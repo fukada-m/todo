@@ -1,7 +1,0 @@
-.title {
-  @apply text-2xl font-bold;
-}
-
-.msg {
-  @apply text-lg m-5 text-gray-900 text-center;
-}
