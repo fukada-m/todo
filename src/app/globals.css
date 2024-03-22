@@ -33,7 +33,7 @@ body {
 }
 
 .title {
-  @apply text-2xl;
+  @apply text-2xl border-solid border-2;
 }
 
 :any-link {
