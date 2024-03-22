@@ -1,0 +1,11 @@
+.header {
+  @apply text-center text-sm font-bold p-1 text-gray-900;
+}
+
+.footer {
+  @apply fixed bottom-0 w-full;
+}
+
+.footer-content {
+  @apply text-sm m-2 text-gray-600;
+}

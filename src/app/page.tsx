@@ -25,11 +25,11 @@ export default function Home() {
       <div>
         <Link href="/pati">ぱっちのぺーじ</Link>
       </div>
-      {/* <p>{message}</p>
+      <p>{message}</p>
       <div>
         <input type="text" onChange={doChange} value={input} className="border-solid border-2 border-gray-400"/>
         <button onClick={doClick} className="px-7 bg-blue-800 mx-2 text-white rounded-lg py-2">決定</button>
-      </div> */}
+      </div>
     </main>
   );
 }
