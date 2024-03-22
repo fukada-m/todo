@@ -1,22 +1,33 @@
-'use server'
+'use client'
 
+import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Link from 'next/link'
+import  { getMemo1, saveMemo1 } from './serverAction'
+import { get } from 'http';
 
-export default async function Home() {
+export default function Home() {
+  let [memo1, setMemo1] = useState('');
+  let [memo2, setMemo2] = useState('');
+  let [memo3, setMemo3] = useState('');
+  let [memo4, setMemo4] = useState('');
+  
+  const editMemo1 = (e:any) => {
+    setMemo1(e.target.value);
+  }
+
+  useEffect(() => {
+    getMemo1().then((data) => {
+      setMemo1(data)
+    })
+  }, [])
+
   return (
     <main className="container" >
-      <h1 className="title bg-primary">Next.jsのサンプル</h1>
-      <p className="text-lg">Topぺーじ</p>
-      <div>
-        <form className='form' action={serverAction}>
-        <input className='input border' type="number" name='input' />
-        <button className='btn'>Click</button>
+        <form className='memo1' action={saveMemo1}>
+          <textarea className='border-solid border-2 d-block' onChange={editMemo1} value={memo1} rows={25} cols={40}  ></textarea>
+          <button >保存</button>
         </form>
-      </div>
-      <div>
-        <Link href="/pati">ぱっちのぺーじ</Link>
-      </div>
+
     </main>
   );
 }
